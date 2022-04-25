@@ -1,4 +1,4 @@
-package com.ds.stacks;
+package com.ds.ds;
 
 public class BasicStack<X> {
     private X [] data;
