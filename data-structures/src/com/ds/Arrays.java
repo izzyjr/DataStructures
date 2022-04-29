@@ -14,7 +14,8 @@ public class Arrays {
         intArray[5] = 1;
         intArray[6] = -22;
 
-        bubbleSort(intArray);
+//        bubbleSort(intArray);
+        selectionSort(intArray);
 
         for (int j : intArray) {
             System.out.println(j);
@@ -35,6 +36,23 @@ public class Arrays {
                     array[i] = temp;
                 }
             }
+        }
+    }
+
+    public static void selectionSort(int[] array) {
+
+        int temp = 0;
+
+        for (int lastUnsortedIndex = array.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
+            int largest = 0;
+            for (int j = 1; j <= lastUnsortedIndex; j++) {
+                if (array[j] > array[largest]) {
+                    largest = j;
+                }
+            }
+            temp = array[lastUnsortedIndex];
+            array[lastUnsortedIndex] = array[largest];
+            array[largest] = temp;
         }
     }
 }
