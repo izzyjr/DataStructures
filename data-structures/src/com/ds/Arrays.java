@@ -18,6 +18,7 @@ public class Arrays {
 //        selectionSort(intArray);
 //        insertionSort(intArray);
         shellSort(intArray);
+        System.out.println(recursiveFactorial(7));
 
         for (int j : intArray) {
             System.out.println(j);
@@ -85,5 +86,28 @@ public class Arrays {
                 array[j] = newElement;
             }
         }
+    }
+
+    public static int iterativeFactorial(int num) {
+
+        if (num == 0) {
+            return 1;
+        }
+
+        int factorial = 1;
+        for (int i = 1; i <= num; i++) {
+            factorial *= i;
+        }
+
+        return factorial;
+    }
+
+    public static int recursiveFactorial(int num) {
+
+        if (num == 0) {
+            return 1;
+        }
+
+        return num * recursiveFactorial(num - 1);
     }
 }
