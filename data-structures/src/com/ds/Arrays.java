@@ -16,7 +16,8 @@ public class Arrays {
 
 //        bubbleSort(intArray);
 //        selectionSort(intArray);
-        insertionSort(intArray);
+//        insertionSort(intArray);
+        shellSort(intArray);
 
         for (int j : intArray) {
             System.out.println(j);
@@ -66,6 +67,23 @@ public class Arrays {
                 array[i] = array[i - 1];
             }
             array[i] = newElement;
+        }
+    }
+
+    public static void shellSort(int[] array) {
+
+        for (int gap = array.length / 2; gap > 0; gap/= 2) {
+            for (int i = gap; i < array.length; i++) {
+                int newElement = array[i];
+
+                int j = i;
+
+                while (j >= gap && array[j - gap] > newElement) {
+                    array[j] = array[j - gap];
+                    j -= gap;
+                }
+                array[j] = newElement;
+            }
         }
     }
 }
