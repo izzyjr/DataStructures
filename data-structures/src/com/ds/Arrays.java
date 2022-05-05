@@ -1,5 +1,7 @@
 package com.ds;
 
+import com.sun.source.tree.WhileLoopTree;
+
 public class Arrays {
 
     public static void main(String[] args) {
@@ -17,8 +19,11 @@ public class Arrays {
 //        bubbleSort(intArray);
 //        selectionSort(intArray);
 //        insertionSort(intArray);
-        shellSort(intArray);
+//        shellSort(intArray);
+
         System.out.println(recursiveFactorial(7));
+
+        quickSort(intArray, 0, 7);
 
         for (int j : intArray) {
             System.out.println(j);
@@ -109,5 +114,38 @@ public class Arrays {
         }
 
         return num * recursiveFactorial(num - 1);
+    }
+
+    public static void quickSort(int[] array, int start, int end) {
+
+        if (end - start < 2) {
+            return;
+        }
+
+        int pivotIndex = partition(array, start, end);
+        quickSort(array, start, pivotIndex);
+        quickSort(array, pivotIndex + 1, end);
+    }
+
+    private static int partition(int[] array, int start, int end) {
+        // This is using the first element as the pivot
+        int pivot = array[start];
+        int i = start;
+        int j = end;
+
+        while (i < j) {
+
+            while (i < j && array[--j] >= pivot);
+            if (i < j) {
+                array[i] = array[j];
+            }
+
+            while (i < j && array[++i] <= pivot);
+            if (i < j) {
+                array[j] = array[i];
+            }
+        }
+        array[i] = pivot;
+        return i;
     }
 }
