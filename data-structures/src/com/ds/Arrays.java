@@ -128,24 +128,24 @@ public class Arrays {
     }
 
     private static int partition(int[] array, int start, int end) {
-        // This is using the first element as the pivot
+
         int pivot = array[start];
-        int i = start;
-        int j = end;
+        int left = start;
+        int right = end;
 
-        while (i < j) {
+        while (left < right) {
 
-            while (i < j && array[--j] >= pivot);
-            if (i < j) {
-                array[i] = array[j];
+            while (left < right && pivot <= array[--right]);
+            if (left < right) {
+                array[left] = array[right];
             }
 
-            while (i < j && array[++i] <= pivot);
-            if (i < j) {
-                array[j] = array[i];
+            while (left < right && pivot >= array[++left]);
+            if (left < right) {
+                array[right] = array[left];
             }
         }
-        array[i] = pivot;
-        return i;
+        array[left] = pivot;
+        return left;
     }
 }
