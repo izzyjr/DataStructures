@@ -1,7 +1,5 @@
 package com.ds;
 
-import com.sun.source.tree.WhileLoopTree;
-
 public class Arrays {
 
     public static void main(String[] args) {
@@ -16,18 +14,17 @@ public class Arrays {
         intArray[5] = 1;
         intArray[6] = -22;
 
+        int[] intArray2 = {2, 5, 9, 103, 2, 8, 7, 10, 4, 100};
+
 //        bubbleSort(intArray);
 //        selectionSort(intArray);
 //        insertionSort(intArray);
 //        shellSort(intArray);
-
-        System.out.println(recursiveFactorial(7));
-
         quickSort(intArray, 0, 7);
 
-        for (int j : intArray) {
-            System.out.println(j);
-        }
+        countingSort(intArray2, 1, 105);
+
+        System.out.println(java.util.Arrays.toString(intArray2));
 
     }
 
@@ -147,5 +144,22 @@ public class Arrays {
         }
         array[left] = pivot;
         return left;
+    }
+
+    public static void countingSort(int[] array, int min, int max) {
+
+        int[] countArray = new int[(max - min) + 1];
+
+        for (int i = 0; i < array.length; i++) {
+            countArray[array[i] - min]++;
+        }
+
+        int j = 0;
+        for (int i = min; i <= max; i++) {
+            while (countArray[i - min] > 0) {
+                array[j++] = i;
+                countArray[i - min]--;
+            }
+        }
     }
 }
