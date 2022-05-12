@@ -1,6 +1,6 @@
 package com.ds.arrays;
 
-public class Arrays {
+public class Main {
 
     public static void main(String[] args) {
 
