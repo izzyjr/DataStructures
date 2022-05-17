@@ -1,4 +1,4 @@
-package com.ds.lists;
+package com.ds;
 
 import java.util.Objects;
 

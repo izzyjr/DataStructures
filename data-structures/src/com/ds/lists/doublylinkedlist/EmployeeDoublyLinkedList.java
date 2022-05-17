@@ -1,6 +1,6 @@
 package com.ds.lists.doublylinkedlist;
 
-import com.ds.lists.Employee;
+import com.ds.Employee;
 
 public class EmployeeDoublyLinkedList {
 

@@ -1,6 +1,6 @@
 package com.ds.lists.jdk;
 
-import com.ds.lists.Employee;
+import com.ds.Employee;
 
 import java.util.Iterator;
 import java.util.LinkedList;

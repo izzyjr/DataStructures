@@ -1,6 +1,6 @@
 package com.ds.lists.arraylists;
 
-import com.ds.lists.Employee;
+import com.ds.Employee;
 
 import java.util.ArrayList;
 import java.util.List;
