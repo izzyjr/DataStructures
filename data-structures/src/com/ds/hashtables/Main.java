@@ -18,18 +18,15 @@ public class Main {
         hashtable.put("Doe", johnDoe.employee);
         hashtable.put("Smith", marySmith.employee);
         hashtable.put("Wilson", mikeWilson.employee);
-        hashtable.put("End", billEnd.employee);
 
+
+        System.out.println("Retrieve key Wilson: " + hashtable.get("Wilson"));
+        System.out.println("Retrieve key Smith: " + hashtable.get("Smith"));
+
+        hashtable.remove("Wilson");
+        hashtable.remove("Jones");
         hashtable.printHashtable();
 
         System.out.println("Retrieve key Smith: " + hashtable.get("Smith"));
-
-        hashtable.remove("Jones");
-        hashtable.remove("Doe");
-        hashtable.remove("Smith");
-        hashtable.remove("Wilson");
-        hashtable.remove("End");
-
-        hashtable.printHashtable();
     }
 }
