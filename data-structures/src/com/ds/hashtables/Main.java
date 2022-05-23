@@ -28,5 +28,25 @@ public class Main {
         hashtable.printHashtable();
 
         System.out.println("Retrieve key Smith: " + hashtable.get("Smith"));
+
+        // *********************************************** - CHAINED HASHTABLE - ********************************************************
+
+        System.out.println("****************************** - CHAINED HASHTABLE - ***************************************************");
+
+        ChainedHashtable ht = new ChainedHashtable();
+        ht.put("Jones", janeJones.employee);
+        ht.put("Doe", johnDoe.employee);
+        ht.put("Wilson", mikeWilson.employee);
+        ht.put("Smith", marySmith.employee);
+
+        ht.printHashtable();
+
+        System.out.println("Retrieve key Smith: " + ht.get("Smith"));
+
+        ht.remove("Doe");
+        ht.remove("Jones");
+        ht.printHashtable();
+
+        System.out.println("Retrieve key Smith: " + ht.get("Smith"));
     }
 }
