@@ -2,6 +2,10 @@ package com.ds.hashtables;
 
 import com.ds.Employee;
 
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -48,5 +52,34 @@ public class Main {
         ht.printHashtable();
 
         System.out.println("Retrieve key Smith: " + ht.get("Smith"));
+
+        // *********************************************** - HashMap - *******************************************************************
+
+        System.out.println("****************************** - HashMap - ***************************************************************");
+
+        Map<String, Employee> hashMap = new HashMap<String, Employee>();
+        hashMap.put("Jones", janeJones.employee);
+        hashMap.put("Doe", johnDoe.employee);
+        hashMap.put("Wilson", mikeWilson.employee);
+        hashMap.put("Smith", marySmith.employee);
+
+        System.out.println(hashMap.containsKey("Doe"));
+        System.out.println(hashMap.containsValue(janeJones.employee));
+
+        Employee employee = hashMap.putIfAbsent("Doe", mikeWilson.employee);
+        System.out.println(employee);
+
+        System.out.println(hashMap.get("Smith"));
+
+//        for (Employee employee : hashMap.values()) {
+//            System.out.println(employee);
+//        }
+
+//        Iterator<Employee> iterator = hashMap.values().iterator();
+//        while (iterator.hasNext()) {
+//            System.out.println(iterator.next());
+//        }
+
+        hashMap.forEach((k, v) -> System.out.println("Key = " + k + " , Employee = " + v));
     }
 }
