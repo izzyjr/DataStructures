@@ -1,11 +1,6 @@
 package com.ds.arrays;
 
-import static com.ds.sort.Sort.bubbleSort;
-import static com.ds.sort.Sort.countingSort;
-import static com.ds.sort.Sort.insertionSort;
-import static com.ds.sort.Sort.quickSort;
-import static com.ds.sort.Sort.selectionSort;
-import static com.ds.sort.Sort.shellSort;
+import static com.ds.sort.Sort.bucketSort;
 
 public class Main {
 
@@ -22,14 +17,10 @@ public class Main {
         intArray[6] = -22;
 
         int[] intArray2 = {2, 5, 9, 103, 2, 8, 7, 10, 4, 100};
+        int[] intArray3 = {54, 46, 83, 66, 95, 92, 43, 10};
 
-        bubbleSort(intArray);
-        selectionSort(intArray);
-        insertionSort(intArray);
-        shellSort(intArray);
-        quickSort(intArray, 0, 7);
-        countingSort(intArray2, 1, 105);
+        bucketSort(intArray3);
 
-        System.out.println(java.util.Arrays.toString(intArray2));
+        System.out.println(java.util.Arrays.toString(intArray3));
     }
 }
